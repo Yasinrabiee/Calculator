@@ -80,23 +80,11 @@ long long int fibonacci(int n)
 	else
 		return fibonacci(n-1) + fibonacci(n-2);		
 }
-void loading()
-{
-	for(int i = 0; i<=118; i++)
-	{
-		cout<<(char)219;
-		Sleep(10);
-	}
-}
 int main(){
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	float a, b, n;
 	char op;
-	SetConsoleTextAttribute(hConsole, 9);
-	loading();
 	start:
-	system("cls");
-	SetConsoleTextAttribute(hConsole, 3);
 	cout<<"Select the oparator[+,-,*,/,%,!,^,#,@[Sum of start...end],&[GCD,LCM],$[Prime number],f[Fibonachi]]: ";
 	cin>>op;	
 	SetConsoleTextAttribute(hConsole, 7);
@@ -232,16 +220,13 @@ int main(){
 	SetConsoleTextAttribute(hConsole, 7);	
 	lable:
 	cout<<"\n\nPress r to return to main menu";
-	cout<<"\n\nPress x to exit the program\n";
 	char ch = getch();
 	if(ch=='r')
 	{
 		system("cls");
 		goto start;
 	}
-	else if(ch=='x')
-		exit(0);
-	else
+	else 
 	{
 		cout<<"\nInvalid !";
 		goto lable;	
